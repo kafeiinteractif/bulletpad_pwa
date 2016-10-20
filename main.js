@@ -8,11 +8,11 @@
 
   new Vue({
     el: '#app',
-    data: function () {
+    data() {
       if (localStorage.getItem("lystical") === null) {
         return { todos: [
-          {text: 'one'},
-          {text: 'two'}
+          {text: 'to delete press the × beside the entry and then enter to confirm'},
+          {text: 'to create a note type in the field at the top and press enter'}
         ]};
       }
       else {
@@ -20,18 +20,26 @@
       }
     },
     methods: {
-      addTodo: function () {
-        var input = this.newTodo.trim()
+      addTodo() {
+        const input = this.newTodo.trim();
         if (input) {
-          this.todos.push({ text: input })
-          this.newTodo = ''
+          this.todos.push({ text: input });
+          this.newTodo = '';
           localStorage.setItem('lystical', JSON.stringify(this.todos));
         }
       },
-      removeTodo: function (index) {
-        this.todos.splice(index, 1)
-        localStorage.setItem('lystical', JSON.stringify(this.todos));
+      removeTodo(index) {
+        const item = this.todos.length - 1 - index;
+        if (confirm(`Delete this?\n${this.todos[item].text}`) == true) {
+          this.todos.splice(item, 1);
+          localStorage.setItem('lystical', JSON.stringify(this.todos));
+        }
       },
+    },
+    filters: {
+      reverse(value) {
+        return value.slice().reverse();
+      }
     }
   });
 
