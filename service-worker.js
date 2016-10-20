@@ -33,11 +33,6 @@ self.addEventListener('activate', function(e) {
   );
 });
 
-
-self.addEventListener('fetch', function(event) {
-  // Do something interesting with the fetch here
-});
-
 self.addEventListener('fetch', function(e) {
   console.log('[ServiceWorker] Fetch', e.request.url);
   e.respondWith(
