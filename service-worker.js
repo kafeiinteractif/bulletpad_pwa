@@ -1,5 +1,5 @@
-var dataCacheName = 'bulletpad-v7'; // data, unused var
-var cacheName = 'bulletpad-x7'; // app shell
+var dataCacheName = 'bulletpad-v8'; // data, unused var
+var cacheName = 'bulletpad-x8'; // app shell
 var filesToCache = [
   '/',
   '/index.html',

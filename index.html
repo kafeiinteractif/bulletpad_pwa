@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content="#83bb22">
+  <meta name="theme-color" content="#39510f">
   <title>Bulletpad - notes, offline.</title>
   <script type='text/javascript' src='vue.js'></script>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -32,7 +32,8 @@
 
   <main class="main">
     <div id="app">
-      <textarea v-model="newTodo" v-on:keyup.enter="addTodo" placeholder="new note >"></textarea>
+      <label>Add todo:
+      <textarea v-model="newTodo" v-on:keyup.enter="addTodo" placeholder="new note >"></textarea></label>
       <ul>
         <li v-for="todo in todos | reverse">
           {{ todo.text }}
