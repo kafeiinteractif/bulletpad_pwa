@@ -1,12 +1,12 @@
-var dataCacheName = 'bulletpad-v8'; // data, unused var
-var cacheName = 'bulletpad-x8'; // app shell
+var dataCacheName = 'bulletpad-v9'; // data, unused var
+var cacheName = 'bulletpad-x9'; // app shell
 var filesToCache = [
-  '/',
-  '/index.html',
-  '/main.js',
-  '/vue.js',
-  '/stylesheet.css',
-  '/service-worker.js',
+  '/bulletpad_pwa/',
+  '/bulletpad_pwa/index.html',
+  '/bulletpad_pwa/main.js',
+  '/bulletpad_pwa/vue.js',
+  '/bulletpad_pwa/stylesheet.css',
+  '/bulletpad_pwa/service-worker.js',
 ];
 
 self.addEventListener('install', function(e) {
