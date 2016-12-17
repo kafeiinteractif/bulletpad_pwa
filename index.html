@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="theme-color" content="#39510f">
   <title>Bulletpad - notes, offline.</title>
-  <script type='text/javascript' src='vue.js'></script>
+  <script type='text/javascript' src='./node_modules/vue/dist/vue.min.js'></script>
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icon256.png" type="image/x-icon">
@@ -35,9 +35,9 @@
       <label>Add todo:
       <textarea v-model="newTodo" v-on:keyup.enter="addTodo" placeholder="new note >"></textarea></label>
       <ul>
-        <li v-for="todo in todos | reverse">
+        <li v-for="(todo,index) in reversedTodos">
           {{ todo.text }}
-          <button v-on:click="removeTodo($index)">×</button>
+          <button @click="removeTodo(index)">×</button>
         </li>
       </ul>
     </div>

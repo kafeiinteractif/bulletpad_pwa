@@ -6,17 +6,22 @@
 (function() {
   'use strict';
 
-  new Vue({
+  const app = new Vue({
     el: '#app',
     data() {
       if (localStorage.getItem("lystical") === null) {
-        return { todos: [
-          {text: 'to delete press the × beside the entry and then enter to confirm'},
-          {text: 'to create a note type in the field at the top and press enter'}
+        return {
+          newTodo: '',
+          todos: [
+            {text: 'to delete press the × beside the entry and then enter to confirm'},
+            {text: 'to create a note type in the field at the top and press enter'}
         ]};
       }
       else {
-        return { todos: JSON.parse(localStorage.getItem("lystical")) };
+        return {
+          newTodo:'',
+          todos: JSON.parse(localStorage.getItem("lystical"))
+        };
       }
     },
     methods: {
@@ -36,9 +41,9 @@
         }
       },
     },
-    filters: {
-      reverse(value) {
-        return value.slice().reverse();
+    computed: {
+      reversedTodos() {
+        return this.todos.slice().reverse();
       }
     }
   });
