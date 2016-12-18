@@ -239,27 +239,13 @@ body {
 /* Custom */
 
 body {
-  font-style: monospace;
-  max-width: 420px;
-  min-width: 320px;
+  font-family: sans-serif;
 }
 
 textarea {
   width: 96%;
   padding: 10px;
   margin: 10px;
-}
-
-ul {
-  padding: 0;
-}
-
-li {
-  background-color: #efefef;
-  padding: 10px;
-  margin: 0px;
-  border-bottom: 1px dashed #fff;
-  list-style: none;
 }
 
 li button {
@@ -270,7 +256,7 @@ li button {
 }
 
 label {
-  font-style: monospace;
+  font-family: monospace;
   font-size: 0.8em;
   padding: 10px;
 }

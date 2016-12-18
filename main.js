@@ -53,6 +53,6 @@
   }
 
   // the JS has loaded. remove the spinner.
-  document.querySelector('.loader').setAttribute('hidden', true);
+  document.querySelector('.woahLoader').setAttribute('hidden', true);
 })();
 

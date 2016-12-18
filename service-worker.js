@@ -1,10 +1,11 @@
-var dataCacheName = 'bulletpad-v11'; // data, unused var
-var cacheName = 'bulletpad-x11'; // app shell
+var dataCacheName = 'bulletpad-v12'; // data, unused var
+var cacheName = 'bulletpad-x12'; // app shell
 var filesToCache = [
   '/bulletpad_pwa/',
   '/bulletpad_pwa/index.html',
   '/bulletpad_pwa/main.js',
   '/bulletpad_pwa/vue.min.js',
+  '/bulletpad_pwa/bulma.css',
   '/bulletpad_pwa/stylesheet.css',
   '/bulletpad_pwa/service-worker.js',
 ];
