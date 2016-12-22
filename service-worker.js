@@ -1,5 +1,5 @@
-var dataCacheName = 'bulletpad-v12'; // data, unused var
-var cacheName = 'bulletpad-x12'; // app shell
+var dataCacheName = 'bulletpad-v13'; // data, unused var
+var cacheName = 'bulletpad-x13'; // app shell
 var filesToCache = [
   '/bulletpad_pwa/',
   '/bulletpad_pwa/index.html',
@@ -20,19 +20,19 @@ self.addEventListener('install', function(e) {
   );
 });
 
-//self.addEventListener('activate', function(e) {
-//  console.log('[ServiceWorker] Activate');
-//  e.waitUntil(
-//    caches.keys().then(function(keyList) {
-//      return Promise.all(keyList.map(function(key) {
-//        if (key !== cacheName) {
-//          console.log('[ServiceWorker] Removing old cache', key);
-//          return caches.delete(key);
-//        }
-//      }));
-//    })
-//  );
-//});
+self.addEventListener('activate', function(e) {
+  console.log('[ServiceWorker] Activate');
+  e.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        if (key !== cacheName) {
+          console.log('[ServiceWorker] Removing old cache', key);
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+});
 
 self.addEventListener('fetch', function(e) {
   console.log('[ServiceWorker] Fetch', e.request.url);
